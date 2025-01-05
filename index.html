@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 <link href="assets/images/favicon.png" rel="icon" />
-<title>PROGETTO XYZ</title>
+<title>PROGETTO POI Bayoumy, Bolinas, Palmieri</title>
 <meta name="description" content="Your ThemeForest item Name and description">
 <meta name="author" content="harnishdesign.net">
 
@@ -84,20 +84,20 @@
    
         <section id="start">
         <h1>Documentazione</h1>
-        <h2>Nome del progetto</h2>
-        <p class="lead">Qui va una breve descrizione.</p>
+        <h2>POI</h2>
+        <p class="lead">Realizzazione di una pagina SPA sui maggiori punti di interesse del Risorgimento. È presente una mappa interattiva che alla scelta del punto di interesse mostra le immagini e le informazioni dettagliate tramite la pagina detail, una tabella e una parte admin che consente di inserire, modificare ed elimiare i punti di interesse.</p>
 		<hr>
 		<div class="row">
 			<div class="col-sm-6 col-lg-4">
 				<ul class="list-unstyled">
-					<li><strong>Classe/Anno:</strong> 5XXX - 24/25</li>
-					<li><strong>Author:</strong> Studente1, studente2, studente3</li>
+					<li><strong>Classe/Anno:</strong> 5B INF - 24/25</li>
+					<li><strong>Author:</strong> Hazem Bayoumy, Jerome Bolinas, Alessandro Palmieri</li>
 				</ul>
 			</div>
 			<div class="col-sm-6 col-lg-4">
 				<ul class="list-unstyled">
-					<li><strong class="font-weight-700">Creato:</strong> 16 dicembre 2024</li>
-					<li><strong>Ultima modifica:</strong> 20 gennaio 2025</li>
+					<li><strong class="font-weight-700">Creato:</strong> 27 dicembre 2024</li>
+					<li><strong>Ultima modifica:</strong> 6 gennaio 2025</li>
 				</ul>
 			</div>
 		</div>
@@ -107,7 +107,19 @@
 
         <section id="architettura_informazione">
           <h2>Architettura informazione</h2>
-          <p class="lead">Qui va inserito un diagramma che rappresenta la struttura delle informazioni del progetto.</p>
+          <p class="lead">
+          </p>
+            Struttura del sito: sono presenti 3 pagine; pagina home che contiene la mappa (interattiva), la tabella, il pulsante che consente di fare il login;
+            pagina detail che viene aperta quando l'utente clicca un punto sulla mappa e consente di visualizzare le immagini (5) e di vedere le informazioni aggiuntive come titolo, anno, durata, descrizione, personaggi chiave, fazioni, vittime, feriti, conseguenze;
+            pagine admin che viene aperta tramite un bottone presente nella pagina home. alla pressione del pulsante, viene visualizzato una login e se questa autenticazione va a buon fine, mostra una form dove è possibile inserire, modificare ed eliminare i punti di interesse.
+          <p>
+          <p>
+            Tecnologie utilizzate: Mappa: Openstreetmap; Generatore delle coordinate: locationiq; servizio cache remota e server login: Cipiaceinfo
+          </p>
+            Funzionalità: Mappa: in base ap popup cliccato presente sulla mappa, viene aperta la pagina detail che mostra un carosello di immagini e le informazioni dettagliate che indicano quel punto di interesse
+            Tabella: Vengono mostrati sotto forma di tabella i dati che vengono inseriti tramite form. Ogni riga corrisponde ad un punto di interesse. Le colone invece indicano gli attributi di ogni punto di interesse
+            Form: Viene mostrata solo se si è fatto il login. Questa consente di eliminare e modificare anche i punti di interesse gia inseriti.
+          </p>
           
         </section>
         
@@ -116,32 +128,50 @@
 
         <section id="UML">
               <h2>UML</h2>
-              <p class="lead">Qui vanno inseriti i vari diagrammi UML</p>
+              <p class="lead">Ecco i vari diagrammi UML</p>
 
             </section>
 
         <section id="umlcasiduso">
           <h2>Diagramma di Casi d'uso</h2>
-          <p class="lead">Diagramma di casi d'uso non previsto.</p>
+          <p class="lead"><a href="https://www.canva.com/design/DAGagGDLdKk/v3VMzI5jhcxOIK7HAbJNWw/edit?utm_content=DAGagGDLdKk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Modello funzionale</a></p>
+        <p>
+          <img src="https://i.postimg.cc/7ZJ9QZB8/image.png"/> Immagine del diagramma del modello funzionale
+        </p>
           
           
         </section>
 
         <section id="umloggetti">
           <h2>Diagrammi di oggetti</h2>
-          <p class="lead">Qui vanno inseriti il diagramma di oggetti (immagini)</p>          
+          <p class="lead"><a href="https://www.canva.com/design/DAGagPi3IWo/9pyKGqPRVMkAEm258ns4Ig/edit?utm_content=DAGagPi3IWo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Diagramma componenti</a></p>         
+          <p>
+            <img src="https://i.postimg.cc/1RKWV5Cy/image.png"/> Immagine del diagramma a componenti
+          </p>          
 
         </section>
-
+        
         <section id="umlstato">
           <h2>Diagrammi di Stato</h2>
-          <p class="lead">Qui vanno inseriti i diagrammi di stato (immagini). </p>          
+          <p class="lead"><a href="https://www.canva.com/design/DAGaxhoHS_s/n6FZEfdC1RP0jC26cYgylg/edit?utm_content=DAGaxhoHS_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Diagramma di stato</a></p>         
+          <p>
+            <img src="https://i.postimg.cc/zD4JSXQr/image.png" style="height: 600px; width: 300px;"/>
+          </p>
+          <p>
+            <img src="https://i.postimg.cc/637kyCtG/image.png" style="height: 600px; width: 300px;"/>
+          </p>           
 
         </section>
 
         <section id="umlsequenza">
           <h2>Diagrammi di Sequenza</h2>
-          <p class="lead">Qui vanno inserito il diagrammi di sequenza (immagini)</p>          
+          <p class="lead"><a href="https://www.canva.com/design/DAGaxhoHS_s/n6FZEfdC1RP0jC26cYgylg/edit?utm_content=DAGaxhoHS_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Diagrammi di Sequenza</a></p>         
+          <p>
+            <img src="https://i.postimg.cc/CMk2Xh1Y/image.png" style="height: 600px; width: 400px;"/>
+          </p>
+          <p>
+            <img src="https://i.postimg.cc/DycMfxLM/image.png" style="height: 600px; width: 400px;"/>
+          </p>           
 
         </section>
 
@@ -149,15 +179,758 @@
 
         <section id="contenuti">
           <h2>Contenuti del progetto</h2>
-          <p class="lead">In questa sezione vanno inseriti i contenuti, organizzati in tabella e con un numero di immagini significative</p>
-
+          <p class="lead">            
+            <a href="https://docs.google.com/document/d/1-3NRrhy0bCKDBs9tkJCLHJ7-HSWCvtk3LYQQ0UKRX4k/edit?usp=sharing" target="_blank">Link alla documentazione dei luoghi di interesse</a>
+          </p>
+          <p>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>
+                    Titolo
+                  </th>
+                  <th>
+                    Anno
+                  </th>
+                  <th>
+                    Durata
+                  </th>
+                  <th>
+                    Descrizione
+                  </th>
+                  <th>
+                    Personaggi Chiave
+                  </th>
+                  <th>
+                    Fazioni
+                  </th>
+                  <th>
+                    Vittime
+                  </th>
+                  <th>
+                    Feriti
+                  </th>
+                  <th>
+                    Conseguenze
+                  </th>
+                  <th>
+                    Foto 1
+                  </th>
+                  <th>
+                    Foto 2
+                  </th>
+                  <th>
+                    Foto 3
+                  </th>
+                  <th>
+                    Foto 4
+                  </th>
+                  <th>
+                    Foto 5
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Torino Capitale
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Porto di Genova
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Marsala
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    5 Giornate di Milano
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Custoza
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Novara
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Porta Pia
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Teano
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Gaeta
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Firenze
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Roma
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Napoli
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Salemi
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Solferino
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Plombieres-les-Bains
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    Descrizione dettagliata
+                  </td>
+                  <td>
+                    Elenco personaggi chiave
+                  </td>
+                  <td>
+                    Elenco fazioni coinvolte
+                  </td>
+                  <td>
+                    Numero vittime
+                  </td>
+                  <td>
+                    Numero feriti
+                  </td>
+                  <td>
+                    Dettagli sulle conseguenze
+                  </td>
+                  <td>
+                    <img src="foto1.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="foto2.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="foto3.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="foto4.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="foto5.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </p>
         </section>
-
-         <hr class="divider">
-
+        <hr class="divider">
         <section id="wireframes">
           <h2>Wireframes</h2>
-          <p class="lead">In questa sezione vanno inseriti i wireframes o la storyboard di progetto.</p>
+          <p class="lead">
+            <a href="https://www.canva.com/design/DAGaq6g-5Q0/UTThXEH0P8xOCC1sZmJ56A/edit">Wireframe</a>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina home
+            </p>
+            <img src="https://i.postimg.cc/LsfD9HgK/image.png"/>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina detail
+            </p>
+            <img src="https://i.postimg.cc/gJHKhNKg/image.png"/>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina admin-login
+            </p>
+            <img src="https://i.postimg.cc/sxf4476s/image.png"/>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina admin-form
+            </p>
+            <img src="https://i.postimg.cc/yxfXQxt9/image.png"/> 
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina admin-modifica
+            </p>
+            <img src="https://i.postimg.cc/m2DSc31S/image.png"/> 
+          </p>
 
            <hr class="divider">
 
