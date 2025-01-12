@@ -1,0 +1,21 @@
+#header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#content {
+    display: flex;
+    align-items: center; 
+    gap: 20px; 
+}
+
+#content table {
+    max-width: 60%; 
+    flex: 1; 
+}
+
+#content img {
+    max-width: 40%;
+    height: auto;
+}
