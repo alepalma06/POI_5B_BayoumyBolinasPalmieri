@@ -10,10 +10,10 @@ export const createLogin = () => {
     const divPrivate = document.querySelector("#private");
     const divLogin = document.querySelector("#login");
   
-    divPrivate.classList.add("hidden");
+    // divPrivate.classList.add("hidden");
     let isLogged = sessionStorage.getItem("Logged") || false;
   
-    const login = (username, password) => {
+    /*const login = (username, password) => {
       return new Promise((resolve, reject) => {
         fetch("http://ws.cipiaceinfo.it/credential/login", {
           method: "POST",
@@ -34,9 +34,9 @@ export const createLogin = () => {
             reject(error);
           });
       });
-    };
+    };*/
   
-    loginButton.onclick = () => {
+    /*loginButton.onclick = () => {
       login(inputName.value, inputPassword.value) 
         .then((result) => {
           if (result) {
@@ -49,7 +49,7 @@ export const createLogin = () => {
         .catch((error) => {
           console.error("Errore durante il login:", error);
         });
-    };
+    };*/
   
     return {
       isLogged: () => isLogged,
