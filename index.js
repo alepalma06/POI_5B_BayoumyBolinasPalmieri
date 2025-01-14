@@ -17,7 +17,6 @@ fetch("conf.json")
         const table1 = tableComponent();
         table1.setParentElement(tabella,compFetch);
 
-        const navBarComp = NavBarComponent(conf);
         const login=createLogin();
         const Map = createMap();
 
