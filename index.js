@@ -7,6 +7,7 @@ import { createForm } from './componenti/form.js';
 import { generateFetchComponent } from './componenti/fetch_componenti.js';
 import { createMap } from './componenti/mappa.js';
 import { createLogin } from './componenti/login.js';
+import { createNavigator } from "./componenti/navigator.js";
 
 fetch("conf.json")
     .then((r) => r.json())
@@ -19,6 +20,7 @@ fetch("conf.json")
 
         const login=createLogin();
         const Map = createMap();
+        const navigator = createNavigator(document.querySelector("#container"));
 
         //fa render mappa
         Map.render();
