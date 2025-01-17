@@ -5,11 +5,7 @@ export const tableComponent = () => {
             <td>#D1</td>
             <td>#D2</td>
             <td>#D3</td>
-            <td>#D4</td>
-            <td>#D5</td>
-            <td>#D6</td>
-            <td>#D7</td>
-            <td >#D8</td>
+            <td>#D4</td>            
         </tr>
     `;
     let parentElement;
@@ -31,14 +27,10 @@ export const tableComponent = () => {
                 <table class="tbl1">
                     <thead>
                         <tr class="border">
-                            <th>Indirizzo</th>
-                            <th>Targa 1</th>
-                            <th>Targa 2</th>
-                            <th>Targa 3</th>
-                            <th>Data</th>
-                            <th>Ora</th>
-                            <th>Feriti</th>
-                            <th>Morti</th>
+                            <th>Titolo</th>
+                            <th>Anno</th>
+                            <th>Personaggi</th>
+                            <th>Fazioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,14 +39,10 @@ export const tableComponent = () => {
             // Aggiungi i dati nella tabella
             data.forEach((elemento) => {
                     let row = templateRow
-                        .replace("#D1", elemento.name.indirizzo)
-                        .replace("#D2", elemento.name.targa1)
-                        .replace("#D3", elemento.name.targa2)
-                        .replace("#D4", elemento.name.targa3)
-                        .replace("#D5", elemento.name.data)
-                        .replace("#D6", elemento.name.ora)
-                        .replace("#D7", elemento.name.numeroferiti)
-                        .replace("#D8", elemento.name.numerovittime);
+                        .replace("#D1", elemento.name.titolo)
+                        .replace("#D2", elemento.name.anno)
+                        .replace("#D3", elemento.name.personaggi)
+                        .replace("#D4", elemento.name.fazioni);
                     html += row;
             });
 
