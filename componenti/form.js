@@ -53,6 +53,7 @@ export const createForm = (parentElement, Map,tableComponent) => {
                 const url_foto3 = document.getElementById("url_foto3").value;
                 const url_foto4 = document.getElementById("url_foto4").value;
                 const url_foto5 = document.getElementById("url_foto5").value;
+                const id = uuid.v4();
                 //controllo se sono pieni i campi obbligatori
                 if (luogo === "" || titolo === "" || anno === "" || durata === "" || descrizione === "" || personaggi === "" || fazioni === "" || vittime === "" || feriti === "" || conseguenze === "" || url_foto1 === "" || url_foto2 === "" || url_foto3 === "" || url_foto4 === "" || url_foto5 === "") {
                     outputform.innerHTML = "KO - Campi obbligatori mancanti";
@@ -74,7 +75,8 @@ export const createForm = (parentElement, Map,tableComponent) => {
                         "url_foto2": url_foto2,
                         "url_foto3": url_foto3,
                         "url_foto4": url_foto4,
-                        "url_foto5": url_foto5
+                        "url_foto5": url_foto5,
+                        "id": id
                     };
                     //faccio fetch
                     const template = "https://us1.locationiq.com/v1/search?key=%TOKEN&q=%LUOGO&format=json&";
