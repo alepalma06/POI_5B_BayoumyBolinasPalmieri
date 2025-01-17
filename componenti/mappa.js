@@ -18,7 +18,7 @@ export const createMap = () => {
             places.forEach(place => {
                 const marker = L.marker(place.coords).addTo(map);
                 marker.bindPopup(`
-                    <b>${place.name.luogo}</b><br>
+                    <b><a href="#detail_${place.name.id}">${place.name.luogo}</a></b><br>
                     Titolo: ${place.name.titolo}<br>
                     Anno: ${place.name.anno}<br>
                     Durata: ${place.name.durata}<br>
@@ -33,7 +33,7 @@ export const createMap = () => {
             places.push(datomappa);
             const marker = L.marker(datomappa.coords).addTo(map);
             marker.bindPopup(`
-                <b>${datomappa.name.indirizzo}</b><br>
+                <b><a href="#detail_${datomappa.name.id}">${datomappa.name.indirizzo}</a></b><br>
                 Targa 1: ${datomappa.name.targa1}<br>
                 Targa 2: ${datomappa.name.targa2}<br>
                 Targa 3: ${datomappa.name.targa3}<br>
