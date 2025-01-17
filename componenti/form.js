@@ -17,59 +17,68 @@ export const createForm = (parentElement, Map,tableComponent) => {
         },
         render: (table1, compFetch, mappe) => {
             parentElement.innerHTML =//creazione campi di input
-                `<div>Indirizzo<br/><input id="indirizzo" type="text" class="form-label form-control"/></div>` +
-                `<div>Targa 1(obbligatorio)<br/><input id="targa1" type="text" class="form-label form-control"/></div>` +
-                `<div>Targa 2<br/><input id="targa2" type="text" class="form-label form-control"/></div>` +
-                `<div>Targa 3<br/><input id="targa3" type="text" class="form-label form-control"/></div>` +
-                `<div>Data<br/><input id="data_incidente" type="date" class="form-label form-control"/></div>` +
-                `<div>Ora<br/><input id="ora" type="time" class="form-label form-control"/></div>` +
-                `<div>Numero Feriti<br/><input id="numeroferiti" type="number" class="form-label form-control"/></div>` +
-                `<div>Numero Vittime<br/><input id="numerovittime" type="number" class="form-label form-control"/></div>` +
-                `<div id="outputform1"></div>` 
+                `<div class="mb-3"><input type="text" class="form-control" name="luogo" id="luogo" placeholder="Inserisci il luogo"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="titolo" id="titolo" placeholder="Inserisci un titolo"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="anno" id="anno" placeholder="Inserisci un anno"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="durata" id="durata" placeholder="Inserisci una durata"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="descrizione" id="descrizione" placeholder="Inserisci una descrizione"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="personaggi" id="personaggi" placeholder="Inserisci i personaggi chiave"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="fazioni" id="fazioni" placeholder="Inserisci le fazioni coinvolte"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="vittime" id="vittime" placeholder="Inserisci le vittime"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="feriti" id="feriti" placeholder="Inserisci i feriti"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="conseguenze" id="conseguenze" placeholder="Inserisci le conseguenze"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="url_foto1" id="url_foto1" placeholder="Inserisci url foto 1"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="url_foto2" id="url_foto2" placeholder="Inserisci url foto 2"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="url_foto3" id="url_foto3" placeholder="Inserisci url foto 3"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="url_foto4" id="url_foto4" placeholder="Inserisci url foto 4"></div>` +
+                `<div class="mb-3"><input type="text" class="form-control" name="url_foto5" id="url_foto5" placeholder="Inserisci url foto 5"></div>` +
+                `<div id="outputform1"></div>` +
+                `<button id="Aggiungi">Aggiungi</button>`
+
 
             document.querySelector("#Aggiungi").onclick = () => {//premo pulsante aggiungi
                 //leggo cosa inserisce utente
-                const indirizzo = document.querySelector("#indirizzo").value;
-                const targa1 = document.querySelector("#targa1").value;
-                let targa2 = document.querySelector("#targa2").value;
-                let targa3 = document.querySelector("#targa3").value;
-                const data_incidente = document.querySelector("#data_incidente").value;
-                const ora = document.querySelector("#ora").value;
-                const numeroferiti = document.querySelector("#numeroferiti").value;
-                const numerovittime = document.querySelector("#numerovittime").value;
-                const outputform = document.getElementById("outputform");
-                //controllo data
-                const oggi = new Date();
-                const giorno = oggi.getDate();
-                const mese = oggi.getMonth() + 1; 
-                const anno = oggi.getFullYear();
-                const dataOdierna = `${anno}-${mese}-${giorno}`;
+                const luogo = document.querySelector("#luogo").value;
+                const titolo = document.querySelector("#titolo").value;
+                let anno = document.querySelector("#anno").value;
+                const durata = document.querySelector("#durata").value;
+                const descrizione = document.querySelector("#descrizione").value;
+                const personaggi = document.querySelector("#personaggi").value;
+                const fazioni = document.querySelector("#fazioni").value;
+                const vittime = document.querySelector("#vittime").value;
+                const feriti = document.getElementById("feriti");
+                const conseguenze = document.getElementById("conseguenze");
+                const url_foto1 = document.getElementById("url_foto1");
+                const url_foto2 = document.getElementById("url_foto2");
+                const url_foto3 = document.getElementById("url_foto3");
+                const url_foto4 = document.getElementById("url_foto4");
+                const url_foto5 = document.getElementById("url_foto5");
                 //controllo se sono pieni i campi obbligatori
-                if (indirizzo === "" || targa1 === "" || data_incidente === "" || ora === "" || numeroferiti === "" || numerovittime === "") {
+                if (luogo === "" || titolo === "" || anno === "" || durata === "" || descrizione === "" || personaggi === "" || fazioni === "" || vittime === "" || feriti === "" || conseguenze === "" || url_foto1 === "" || url_foto2 === "" || url_foto3 === "" || url_foto4 === "" || url_foto5 === "") {
                     outputform.innerHTML = "KO - Campi obbligatori mancanti";
-                } else if (data_incidente > dataOdierna) {
-                    outputform.innerHTML = "KO - La data non può essere futura";
-                } else {
-                    if (targa2===""){
-                        targa2="Non segnalata";
-                    }
-                    if (targa3===""){
-                        targa3="Non segnalata";
-                    }
+                }
+                else {
                     //creo dizionario
                     const datodizionario = {
-                        "indirizzo": indirizzo,
-                        "targa1": targa1,
-                        "targa2": targa2,
-                        "targa3": targa3,
-                        "data": data_incidente,
-                        "ora": ora,
-                        "numeroferiti": numeroferiti,
-                        "numerovittime": numerovittime
+                        "luogo": luogo,
+                        "titolo": titolo,
+                        "anno": anno,
+                        "durata": durata,
+                        "descrizione": descrizione,
+                        "personaggi": personaggi,
+                        "fazioni": fazioni,
+                        "vittime": vittime,
+                        "feriti": feriti,
+                        "conseguenze": conseguenze,
+                        "url_foto1": url_foto1,
+                        "url_foto2": url_foto2,
+                        "url_foto3": url_foto3,
+                        "url_foto4": url_foto4,
+                        "url_foto5": url_foto5
                     };
                     //faccio fetch
                     const template = "https://us1.locationiq.com/v1/search?key=%TOKEN&q=%LUOGO&format=json&";
-                    let url = template.replace("%LUOGO", indirizzo).replace("%TOKEN", token_mappe);
+                    let url = template.replace("%LUOGO", luogo).replace("%TOKEN", token_mappe);
                     fetch(url)
                         .then(response => response.json())
                         .then(data => {
@@ -93,16 +102,23 @@ export const createForm = (parentElement, Map,tableComponent) => {
                     
 
                     //azzero campi
-                    outputform.innerHTML = "OK";
-                    document.querySelector("#indirizzo").value = "";
-                    document.querySelector("#targa1").value = "";
-                    document.querySelector("#targa2").value = "";
-                    document.querySelector("#targa3").value = "";
-                    document.querySelector("#data_incidente").value = "";
-                    document.querySelector("#ora").value = "";
-                    document.querySelector("#numeroferiti").value = "";
-                    document.querySelector("#numerovittime").value = "";
-
+                    // outputform.innerHTML = "OK";
+                    document.querySelector("#luogo").value = "";
+                    document.querySelector("#titolo").value = "";
+                    document.querySelector("#anno").value = "";
+                    document.querySelector("#durata").value = "";
+                    document.querySelector("#descrizione").value = "";
+                    document.querySelector("#personaggi").value = "";
+                    document.querySelector("#fazioni").value = "";
+                    document.querySelector("#vittime").value = "";
+                    document.querySelector("#feriti").value = "";
+                    document.querySelector("#vittime").value = "";
+                    document.querySelector("#conseguenze").value = "";
+                    document.querySelector("#url_foto1").value = "";
+                    document.querySelector("#url_foto2").value = "";
+                    document.querySelector("#url_foto3").value = "";
+                    document.querySelector("#url_foto4").value = "";
+                    document.querySelector("#url_foto5").value = "";
                 }
                 
 
