@@ -21,7 +21,7 @@
             <header id="header">
                 <h1>Il Risorgimento</h1>
                 <a href="#admin">
-                    <button type="button" id="aggiungi">AGGIUNGI</button>
+                    <button type="button" id="aggiungi">ADMIN</button>
                 </a>
             </header>
             <main class="container d-flex justify-content-center">
@@ -46,23 +46,19 @@
 
         <div id="admin" class="page">
             <a href="#home">
-                <button class="close">X</button>
+                <button class="close">⬅️</button>
             </a>
-            <h1 class="text-center mt-3">ESEGUI IL LOGIN</h1>
-            <!-- la login non funziona. anche se si completano i campi in username e password, giusti o sbagliati che siano, cliccando sul bottone, si viene reindirizzati verso la form -->
-            <form class="container mt-4">
-                <div class="mb-3">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="Inserisci un username">
+            <div id="divlogin">
+                <h1 class="text-center mt-3">ESEGUI IL LOGIN</h1>
+                <div id="login" class="container mt-3 d-flex justify-content-end">
+                    <input id="name" type="text" class="form-label form-control"/>
+                    <input id="password" type="password" class="form-label form-control"/>
+                    <button id="login" type="button" class="btn btn-primary mt-2">Login</button>
                 </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Inserisci la password">
-                </div>
-                <a href="#">
-                    <button class="btn btn-primary" type="button">
-                        Login
-                    </button>
-                </a>
-            </form>
+            </div>
+            <div id="private" class="hidden">
+                <div id="form"></div>
+            </div>
         </div>
 
         <div id="detail" class="page">
@@ -90,7 +86,7 @@
                 </div>
                 <div class="info-box">
                     <a href="#home">
-                        <button class="close">X</button>
+                        <button class="close">⬅️</button>
                     </a>
                     <h2>Informazioni</h2>
                     <p><strong>Titolo:</strong> Esempio Evento</p>
