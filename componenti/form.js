@@ -46,13 +46,13 @@ export const createForm = (parentElement, Map,tableComponent) => {
                 const personaggi = document.querySelector("#personaggi").value;
                 const fazioni = document.querySelector("#fazioni").value;
                 const vittime = document.querySelector("#vittime").value;
-                const feriti = document.getElementById("feriti");
-                const conseguenze = document.getElementById("conseguenze");
-                const url_foto1 = document.getElementById("url_foto1");
-                const url_foto2 = document.getElementById("url_foto2");
-                const url_foto3 = document.getElementById("url_foto3");
-                const url_foto4 = document.getElementById("url_foto4");
-                const url_foto5 = document.getElementById("url_foto5");
+                const feriti = document.getElementById("feriti").value;
+                const conseguenze = document.getElementById("conseguenze").value;
+                const url_foto1 = document.getElementById("url_foto1").value;
+                const url_foto2 = document.getElementById("url_foto2").value;
+                const url_foto3 = document.getElementById("url_foto3").value;
+                const url_foto4 = document.getElementById("url_foto4").value;
+                const url_foto5 = document.getElementById("url_foto5").value;
                 //controllo se sono pieni i campi obbligatori
                 if (luogo === "" || titolo === "" || anno === "" || durata === "" || descrizione === "" || personaggi === "" || fazioni === "" || vittime === "" || feriti === "" || conseguenze === "" || url_foto1 === "" || url_foto2 === "" || url_foto3 === "" || url_foto4 === "" || url_foto5 === "") {
                     outputform.innerHTML = "KO - Campi obbligatori mancanti";
@@ -98,6 +98,7 @@ export const createForm = (parentElement, Map,tableComponent) => {
                                     Map.render()
                                 })
                             })
+                            outputform.innerHTML = "KO - Campi obbligatori mancanti";
                         });    
                     
 
@@ -123,14 +124,22 @@ export const createForm = (parentElement, Map,tableComponent) => {
                 
 
                 // Resetta i campi
-                document.querySelector("#indirizzo").value = "";
-                document.querySelector("#targa1").value = "";
-                document.querySelector("#targa2").value = "";
-                document.querySelector("#targa3").value = "";
-                document.querySelector("#data_incidente").value = "";
-                document.querySelector("#ora").value = "";
-                document.querySelector("#numeroferiti").value = "";
-                document.querySelector("#numerovittime").value = "";
+                document.querySelector("#luogo").value = "";
+                document.querySelector("#titolo").value = "";
+                document.querySelector("#anno").value = "";
+                document.querySelector("#durata").value = "";
+                document.querySelector("#descrizione").value = "";
+                document.querySelector("#personaggi").value = "";
+                document.querySelector("#fazioni").value = "";
+                document.querySelector("#vittime").value = "";
+                document.querySelector("#feriti").value = "";
+                document.querySelector("#vittime").value = "";
+                document.querySelector("#conseguenze").value = "";
+                document.querySelector("#url_foto1").value = "";
+                document.querySelector("#url_foto2").value = "";
+                document.querySelector("#url_foto3").value = "";
+                document.querySelector("#url_foto4").value = "";
+                document.querySelector("#url_foto5").value = "";
             }
         }
     };

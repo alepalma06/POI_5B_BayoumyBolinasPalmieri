@@ -18,14 +18,14 @@ export const createMap = () => {
             places.forEach(place => {
                 const marker = L.marker(place.coords).addTo(map);
                 marker.bindPopup(`
-                    <b>${place.name.indirizzo}</b><br>
-                    Targa 1: ${place.name.targa1}<br>
-                    Targa 2: ${place.name.targa2}<br>
-                    Targa 3: ${place.name.targa3}<br>
-                    Data: ${place.name.data}<br>
-                    Ora: ${place.name.ora}<br>
-                    Numero Feriti: ${place.name.numeroferiti}<br>
-                    Numero Vittime: ${place.name.numerovittime}
+                    <b>${place.name.luogo}</b><br>
+                    Titolo: ${place.name.titolo}<br>
+                    Anno: ${place.name.anno}<br>
+                    Durata: ${place.name.durata}<br>
+                    Personaggi: ${place.name.personaggi}<br>
+                    Fazioni: ${place.name.fazioni}<br>
+                    Vittime: ${place.name.vittime}<br>
+                    Feriti: ${place.name.feriti}
                 `);
             });
         },
