@@ -45,7 +45,4 @@ fetch("conf.json")
         });
         
 
-        // Configura e renderizza la barra di navigazione
-        navBarComp.setParentElement(navbar);
-        navBarComp.render(form, table1);
     });
