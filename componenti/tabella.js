@@ -55,7 +55,7 @@ export const tableComponent = () => {
         },
     };
 };
-export const tableComponent2 = (Map,compFetch,table1) => {
+export const tableComponent2 = (Map,compFetch,table1,table2) => {
     let data = [];
     let parentElement;
     let formContainer;
@@ -120,6 +120,8 @@ export const tableComponent2 = (Map,compFetch,table1) => {
                 table1.render();         // Rende di nuovo la tabella
                 Map.setData(result);     // Aggiorna la mappa
                 Map.render();            // Rende la mappa aggiornata
+                table2.setData(result);  // Aggiorna table2 con i dati più recenti
+                table2.render();
             });
         });
     }
