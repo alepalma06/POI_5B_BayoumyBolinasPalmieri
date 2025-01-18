@@ -19,12 +19,13 @@ fetch("conf.json")
         // Crea componente tabella
         const table1 = tableComponent();
         table1.setParentElement(tabella,compFetch);
-        const table2 = tableComponent2();
-        table2.setParentElement(tabella2,compFetch);
+        const Map = createMap();
+        const table2 = tableComponent2(Map, compFetch, table1);
+        table2.setParentElement(tabella2);
         table2.setFormContainer(document.getElementById("form-container"));
 
         const login=createLogin();
-        const Map = createMap();
+        
         const navigator = createNavigator(document.querySelector("#container"));
 
         //fa render mappa

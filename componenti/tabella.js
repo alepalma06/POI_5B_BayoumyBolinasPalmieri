@@ -55,17 +55,8 @@ export const tableComponent = () => {
         },
     };
 };
-export const tableComponent2 = () => {
+export const tableComponent2 = (Map,compFetch,table1) => {
     let data = [];
-    let templateRow = `
-    <tr class="tbl1">
-        <td><a href="#detail_#D10">#D1</a></td>
-        <td>
-            <button class="edit-btn" data-id="#D10">Modifica</button>
-            <button class="delete-btn" data-id="#D10">Elimina</button>
-        </td>
-    </tr>
-    `;
     let parentElement;
     let formContainer;
 
@@ -94,14 +85,43 @@ export const tableComponent2 = () => {
                     </thead>
                     <tbody>
             `;
-            data.forEach((elemento) => {
-                let row = templateRow
-                    .replace("#D10", elemento.name.id)
-                    .replace("#D1", elemento.name.titolo)
-                html += row;
+
+            data.forEach((elemento, i) => { // Usa i come indice
+                let templateRow = `
+                <tr class="tbl1">
+                    <td><a href="#detail_${elemento.name.id}">${elemento.name.titolo}</a></td>
+                    <td>
+                        <button class="edit-btn" id="bottonemodifica${i}">Modifica</button>
+                        <button class="delete-btn" id="bottoneelimina${i}">Elimina</button>
+                    </td>
+                </tr>
+                `;
+                html += templateRow;
             });
+
             html += `</tbody></table>`;
             parentElement.innerHTML = html;
-        }
+
+            // Aggiungi i listener per i pulsanti dopo il rendering
+            data.forEach((_, i) => {
+                document.getElementById(`bottoneelimina${i}`).onclick = () => cancella(i);
+                document.getElementById(`bottonemodifica${i}`).onclick = () => modifica(i);
+            });
+        },
+        
     };
+
+    function cancella(i) {
+        data.splice(i, 1); // Rimuove l'elemento alla posizione i
+        // Si presume che compFetch, table1, e Map siano definiti all'esterno di questa funzione
+        compFetch.setData(data).then(() => {
+            compFetch.getData().then((result) => {
+                table1.setData(result); // Aggiorna la tabella
+                table1.render();         // Rende di nuovo la tabella
+                Map.setData(result);     // Aggiorna la mappa
+                Map.render();            // Rende la mappa aggiornata
+            });
+        });
+    }
 };
+
