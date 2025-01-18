@@ -1,8 +1,10 @@
 const tabella = document.getElementById("tabella"); 
+const tabella2 = document.getElementById("tabella2"); 
+
 const navbar = document.getElementById("navbar");
 const formElement = document.getElementById("form");
 
-import { tableComponent } from './componenti/tabella.js';
+import { tableComponent,tableComponent2 } from './componenti/tabella.js';
 import { createForm } from './componenti/form.js';
 import { generateFetchComponent } from './componenti/fetch_componenti.js';
 import { createMap } from './componenti/mappa.js';
@@ -17,6 +19,9 @@ fetch("conf.json")
         // Crea componente tabella
         const table1 = tableComponent();
         table1.setParentElement(tabella,compFetch);
+        const table2 = tableComponent2();
+        table2.setParentElement(tabella2,compFetch);
+        table2.setFormContainer(document.getElementById("form-container"));
 
         const login=createLogin();
         const Map = createMap();
@@ -40,6 +45,8 @@ fetch("conf.json")
             form.setLabels(data);
             table1.setData(data); 
             table1.render(); 
+            table2.setData(data); 
+            table2.render();
             Map.setData(data); 
             Map.render();
         });

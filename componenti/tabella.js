@@ -55,3 +55,53 @@ export const tableComponent = () => {
         },
     };
 };
+export const tableComponent2 = () => {
+    let data = [];
+    let templateRow = `
+    <tr class="tbl1">
+        <td><a href="#detail_#D10">#D1</a></td>
+        <td>
+            <button class="edit-btn" data-id="#D10">Modifica</button>
+            <button class="delete-btn" data-id="#D10">Elimina</button>
+        </td>
+    </tr>
+    `;
+    let parentElement;
+    let formContainer;
+
+    return {
+        setData: (datomappa) => {
+            data = datomappa;
+        },
+        addData: (datomappa) => {
+            data.push(datomappa);
+        },
+        setParentElement: (pr) => {
+            parentElement = pr;
+        },
+        setFormContainer: (container) => {
+            formContainer = container; // Div o elemento dove mostrare la form
+        },
+        getData: () => data,
+        render: () => {
+            let html = `
+                <table class="tbl1">
+                    <thead>
+                        <tr class="border">
+                            <th>Titolo</th>
+                            <th>Anno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            data.forEach((elemento) => {
+                let row = templateRow
+                    .replace("#D10", elemento.name.id)
+                    .replace("#D1", elemento.name.titolo)
+                html += row;
+            });
+            html += `</tbody></table>`;
+            parentElement.innerHTML = html;
+        }
+    };
+};
