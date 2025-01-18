@@ -22,7 +22,6 @@ fetch("conf.json")
         const Map = createMap();
         const table2 = tableComponent2(Map, compFetch, table1);
         table2.setParentElement(tabella2);
-        table2.setFormContainer(document.getElementById("form-container"));
 
         const login=createLogin();
         

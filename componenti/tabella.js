@@ -15,14 +15,13 @@ export const tableComponent = () => {
             data = datomappa; 
         },
         addData: (datomappa) => {
-            data.push(datomappa); // Aggiungi un nuovo dato
+            data.push(datomappa); 
         },
         setParentElement: (pr) => {
             parentElement = pr;  
         },
         render: () => {
 
-            // Crea intestazione della tabella
             let html = `
                 <table class="tbl1">
                     <thead>
@@ -36,21 +35,19 @@ export const tableComponent = () => {
                     <tbody>
             `;
 
-            // Aggiungi i dati nella tabella
             data.forEach((elemento) => {
                 let row = templateRow
                     .replace("#D10", elemento.name.id)    
                     .replace("#D1", elemento.name.titolo)  
-                    .replace("#D2", elemento.name.anno)    // Sostituisci anno
-                    .replace("#D3", elemento.name.personaggi) // Sostituisci personaggi
-                    .replace("#D4", elemento.name.fazioni); // Sostituisci fazioni
+                    .replace("#D2", elemento.name.anno)    
+                    .replace("#D3", elemento.name.personaggi) 
+                    .replace("#D4", elemento.name.fazioni); 
                 html += row;
             });
 
-            // Completa la tabella
             html += `</tbody></table>`;
 
-            // Inserisce l'HTML nella pagina
+            // Inserisce html nella pagina
             parentElement.innerHTML = html;
         },
     };
@@ -70,9 +67,6 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
         setParentElement: (pr) => {
             parentElement = pr;
         },
-        setFormContainer: (container) => {
-            formContainer = container; // Div o elemento dove mostrare la form
-        },
         getData: () => data,
         render: () => {
             let html = `
@@ -80,7 +74,7 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
                     <thead>
                         <tr class="border">
                             <th>Titolo</th>
-                            <th>Anno</th>
+                            <th>Interazioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,17 +107,36 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
 
     function cancella(i) {
         data.splice(i, 1); // Rimuove l'elemento alla posizione i
-        // Si presume che compFetch, table1, e Map siano definiti all'esterno di questa funzione
         compFetch.setData(data).then(() => {
             compFetch.getData().then((result) => {
-                table1.setData(result); // Aggiorna la tabella
-                table1.render();         // Rende di nuovo la tabella
+                table1.setData(result); 
+                table1.render();         // Fa render tabella
                 Map.setData(result);     // Aggiorna la mappa
                 Map.render();            // Rende la mappa aggiornata
                 table2.setData(result);  // Aggiorna table2 con i dati più recenti
                 table2.render();
             });
         });
+    }
+    function modifica(i) {
+        const elemento = data[i];  // Trova l'elemento corrispondente all'indice i
+        cancella(i);
+        // Riempi i campi di input del modulo con i valori dell'elemento selezionato
+        document.querySelector("#luogo").value = elemento.name.luogo;
+        document.querySelector("#titolo").value = elemento.name.titolo;
+        document.querySelector("#anno").value = elemento.name.anno;
+        document.querySelector("#durata").value = elemento.name.durata;
+        document.querySelector("#descrizione").value = elemento.name.descrizione;
+        document.querySelector("#personaggi").value = elemento.name.personaggi;
+        document.querySelector("#fazioni").value = elemento.name.fazioni;
+        document.querySelector("#vittime").value = elemento.name.vittime;
+        document.querySelector("#feriti").value = elemento.name.feriti;
+        document.querySelector("#conseguenze").value = elemento.name.conseguenze;
+        document.querySelector("#url_foto1").value = elemento.name.url_foto1;
+        document.querySelector("#url_foto2").value = elemento.name.url_foto2;
+        document.querySelector("#url_foto3").value = elemento.name.url_foto3;
+        document.querySelector("#url_foto4").value = elemento.name.url_foto4;
+        document.querySelector("#url_foto5").value = elemento.name.url_foto5;
     }
 };
 
