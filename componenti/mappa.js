@@ -1,5 +1,5 @@
 export const createMap = () => {
-    let places = []; // Lista di tutti i luoghi aggiunti
+    let places = []; // Lista di tutti i luoghi
 
     // Inizializza la mappa centrata
     const map = L.map('map').setView([45, 8], 5);
@@ -14,9 +14,9 @@ export const createMap = () => {
         setData: (datomappa) => {
             places = datomappa; // Aggiorna la lista dei luoghi
         },
-        render: () => {
+        render: () => {//aggiorna la mappa
             places.forEach(place => {
-                const marker = L.marker(place.coords).addTo(map);
+                const marker = L.marker(place.coords).addTo(map);//crea popup
                 marker.bindPopup(`
                     <b><a href="#detail_${place.name.id}">${place.name.luogo}</a></b><br>
                     Titolo: ${place.name.titolo}<br>
@@ -29,19 +29,5 @@ export const createMap = () => {
                 `);
             });
         },
-        add: (datomappa) => {
-            places.push(datomappa);
-            const marker = L.marker(datomappa.coords).addTo(map);
-            marker.bindPopup(`
-                <b><a href="#detail_${datomappa.name.id}">${datomappa.name.indirizzo}</a></b><br>
-                Targa 1: ${datomappa.name.targa1}<br>
-                Targa 2: ${datomappa.name.targa2}<br>
-                Targa 3: ${datomappa.name.targa3}<br>
-                Data: ${datomappa.name.data}<br>
-                Ora: ${datomappa.name.ora}<br>
-                Numero Feriti: ${datomappa.name.numeroferiti}<br>
-                Numero Vittime: ${datomappa.name.numerovittime}
-            `);
-        }
     };
 };

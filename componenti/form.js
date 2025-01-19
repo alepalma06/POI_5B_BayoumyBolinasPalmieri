@@ -5,7 +5,7 @@ export const createForm = (parentElement, Map,tableComponent) => {
 
     let token_mappe = "";
 
-    fetch("conf.json").then(r => r.json()).then(conf => {
+    fetch("conf.json").then(r => r.json()).then(conf => {//fa fetch a conf per prendere il token per ottenere la lat e long di un posto
         token_mappe = conf.token;
     });
     return {
@@ -53,7 +53,7 @@ export const createForm = (parentElement, Map,tableComponent) => {
                 const url_foto3 = document.getElementById("url_foto3").value;
                 const url_foto4 = document.getElementById("url_foto4").value;
                 const url_foto5 = document.getElementById("url_foto5").value;
-                const id = uuid.v4();
+                const id = uuid.v4();//creo id tramite la libreria uuid
                 //controllo se sono pieni i campi obbligatori
                 if (luogo === "" || titolo === "" || anno === "" || durata === "" || descrizione === "" || personaggi === "" || fazioni === "" || vittime === "" || feriti === "" || conseguenze === "" || url_foto1 === "" || url_foto2 === "" || url_foto3 === "" || url_foto4 === "" || url_foto5 === "") {
                     outputform.innerHTML = "KO - Campi obbligatori mancanti";
@@ -78,21 +78,21 @@ export const createForm = (parentElement, Map,tableComponent) => {
                         "url_foto5": url_foto5,
                         "id": id
                     };
-                    //faccio fetch
+                    //faccio fetch a servizio per lat e lon
                     const template = "https://us1.locationiq.com/v1/search?key=%TOKEN&q=%LUOGO&format=json&";
                     let url = template.replace("%LUOGO", luogo).replace("%TOKEN", token_mappe);
                     fetch(url)
                         .then(response => response.json())
                         .then(data => {
                             //creo datomappa
-                            const datomappa={
+                            const datomappa={//creo dato formato sa name che continene i parametri della form e coords ha le coordinate
                                 name: datodizionario,
                                 coords:[data[0].lat, data[0].lon]
                             }
-                            dato_lista.push(datomappa);
+                            dato_lista.push(datomappa);//lo pusha dentro la lista
                             //faccio set
-                            compFetch.setData(dato_lista).then(data => {
-                                compFetch.getData().then(result=>{
+                            compFetch.setData(dato_lista).then(data => {//faccio la fetch per fare set della cache remota
+                                compFetch.getData().then(result=>{//faccio get per cache remota
                                     dato_lista=result
                                     table1.setData(result)
                                     table1.render()
@@ -105,7 +105,6 @@ export const createForm = (parentElement, Map,tableComponent) => {
                     
 
                     //azzero campi
-                    // outputform.innerHTML = "OK";
                     document.querySelector("#luogo").value = "";
                     document.querySelector("#titolo").value = "";
                     document.querySelector("#anno").value = "";

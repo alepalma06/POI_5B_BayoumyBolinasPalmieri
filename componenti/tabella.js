@@ -1,5 +1,6 @@
-export const tableComponent = () => {
+export const tableComponent = () => {//compoennte per tabella home
     let data = [];
+    //template per ogni riga conh href sul titolo
     let templateRow = `
     <tr class="tbl1">
         <td><a href="#detail_#D10">#D1</a></td>
@@ -19,7 +20,7 @@ export const tableComponent = () => {
             parentElement = pr;  
         },
         render: () => {
-
+            //creo il table head
             let html = `
                 <table class="tbl1">
                     <thead>
@@ -32,7 +33,7 @@ export const tableComponent = () => {
                     </thead>
                     <tbody>
             `;
-
+            //faccio ciclo for e sostituisco i valori che mi interessano nella riga della tabella
             data.forEach((elemento) => {
                 let row = templateRow
                     .replace("#D10", elemento.name.id)    
@@ -51,7 +52,7 @@ export const tableComponent = () => {
     };
 };
 
-export const tableComponent2 = (Map,compFetch,table1,table2) => {
+export const tableComponent2 = (Map,compFetch,table1,table2) => {//componente per tabella admin
     let data = [];
     let parentElement;
     let formContainer;
@@ -68,6 +69,7 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
         },
         getData: () => data,
         render: () => {
+            //creo table head 
             let html = `
                 <table class="tbl1">
                     <thead>
@@ -79,7 +81,7 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
                     <tbody>
             `;
 
-            data.forEach((elemento, i) => { // Usa i come indice
+            data.forEach((elemento, i) => { // scorre tutta la lista e sostituisce i valori che mi interessano e crea anche i bottoni modifica e elimina con id assegnati con ciclo for
                 let templateRow = `
                 <tr class="tbl1">
                     <td><a href="#detail_${elemento.name.id}">${elemento.name.titolo}</a></td>
@@ -96,7 +98,7 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
             parentElement.innerHTML = html;
 
             // Aggiungi i listener per i pulsanti dopo il rendering
-            data.forEach((_, i) => {
+            data.forEach((_, i) => {//assegno ad ogni bottone onclick e per ogni funzione
                 document.getElementById(`bottoneelimina${i}`).onclick = () => cancella(i);
                 document.getElementById(`bottonemodifica${i}`).onclick = () => modifica(i);
             });
@@ -104,7 +106,7 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
         
     };
 
-    function cancella(i) {
+    function cancella(i) {//funzione per cancellare e riceve come indice il valore del bottone
         data.splice(i, 1); // Rimuove l'elemento alla posizione i
         compFetch.setData(data).then(() => {
             compFetch.getData().then((result) => {
@@ -117,10 +119,10 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {
             });
         });
     }
-    function modifica(i) {
+    function modifica(i) {//funzione per modificare
         const elemento = data[i];  // Trova l'elemento corrispondente all'indice i
-        cancella(i);
-        // Riempi i campi di input del modulo con i valori dell'elemento selezionato
+        cancella(i);//chiama cancella per non avere doppioni della stesso punto di interesse
+        // Riempi di nuovo i campi di input della form 
         document.querySelector("#luogo").value = elemento.name.luogo;
         document.querySelector("#titolo").value = elemento.name.titolo;
         document.querySelector("#anno").value = elemento.name.anno;
