@@ -2,20 +2,18 @@ export const tableComponent = () => {
     let data = [];
     let templateRow = `
     <tr class="tbl1">
-        <td><a href="#detail_${"#D10"}">#D1</a></td>
+        <td><a href="#detail_#D10">#D1</a></td>
         <td>#D2</td>
         <td>#D3</td>
         <td>#D4</td>            
     </tr>
-`;
+    `;
+
     let parentElement;
 
     return {
         setData: (datomappa) => {
             data = datomappa; 
-        },
-        addData: (datomappa) => {
-            data.push(datomappa); 
         },
         setParentElement: (pr) => {
             parentElement = pr;  
@@ -52,6 +50,7 @@ export const tableComponent = () => {
         },
     };
 };
+
 export const tableComponent2 = (Map,compFetch,table1,table2) => {
     let data = [];
     let parentElement;
