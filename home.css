@@ -54,6 +54,8 @@ body {
     align-items: center;
     width: 100%;
     background-color: #fff;
+    background: url('https://stock.adobe.com/ch_it/search?k=italian+flag+banner') no-repeat center center;
+    background-size: cover;
     padding: 10px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-bottom: 2px solid #e1d7c6;
@@ -93,7 +95,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 40px auto;
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 15px #259b64;
     overflow: hidden;
